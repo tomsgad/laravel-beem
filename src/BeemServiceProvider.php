@@ -4,7 +4,6 @@ namespace Tomsgad\Beem;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Tomsgad\Beem\Commands\BeemCommand;
 
 class BeemServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class BeemServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-beem')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-beem_table')
-            ->hasCommand(BeemCommand::class);
+            ->hasConfigFile();
     }
 }
