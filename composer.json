@@ -59,10 +59,7 @@
         "laravel": {
             "providers": [
                 "Tomsgad\\Beem\\BeemServiceProvider"
-            ],
-            "aliases": {
-                "Beem": "Tomsgad\\Beem\\Facades\\Beem"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
