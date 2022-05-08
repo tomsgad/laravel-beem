@@ -12,7 +12,7 @@ class BeemMessage
 
     public string $secretKey;
 
-    public static function create(string $content) : self
+    public static function create(string $content): self
     {
         return new static($content);
     }
