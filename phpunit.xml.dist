@@ -36,4 +36,10 @@
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="BEEM_SMS_SENDER_NAME" value="MAGURU"/>
+        <env name="BEEM_SMS_API_KEY" value="api_key"/>
+        <env name="BEEM_SMS_SECRET_KEY" value="secret_key"/>
+    </php>
 </phpunit>

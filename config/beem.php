@@ -25,5 +25,5 @@ return [
     |
     */
 
-    'sms_sender_name' => env('BEEM_SMS_SENDER_NAME', 'INFO'),
+    'sms_sender_name' => env('BEEM_SMS_SENDER_NAME', ''),
 ];
