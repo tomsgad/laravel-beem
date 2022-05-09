@@ -1,13 +1,13 @@
 <?php
 
-it('expect sms api key from env file', function () {
-    expect(config('beem.sms.api_key'))->toBe('api_key');
+it('can get sms api key from env file', function () {
+    expect(config('beem.sms.api_key'))->toBe('testApiKey');
 });
 
-it('expect sms secret key from env file', function () {
-    expect(config('beem.sms.secret_key'))->toBe('secret_key');
+it('can get sms secret key from env file', function () {
+    expect(config('beem.sms.secret_key'))->toBe('testSecretKey');
 });
 
-it('expect sms sender name from env file', function () {
-    expect(config('beem.sms.sender_name'))->toBe('MAGURU');
+it('can get sms sender name from env file', function () {
+    expect(config('beem.sms.sender_name'))->toBe('INFO');
 });
