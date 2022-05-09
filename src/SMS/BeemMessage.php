@@ -11,10 +11,11 @@ class BeemMessage
     public string $apiKey;
     public string $secretKey;
 
-    #[Pure] public static function create(string $content): self
-    {
-        return new static($content);
-    }
+    #[Pure]
+ public static function create(string $content): self
+ {
+     return new static($content);
+ }
 
     public function __construct(string $content = '')
     {
@@ -28,6 +29,7 @@ class BeemMessage
     public function content(string $content): BeemMessage
     {
         $this->content = $content;
+
         return $this;
     }
 
@@ -38,6 +40,7 @@ class BeemMessage
     public function sender(string $sender): BeemMessage
     {
         $this->sender = $sender;
+
         return $this;
     }
 
@@ -48,6 +51,7 @@ class BeemMessage
     public function apiKey(string $apiKey): BeemMessage
     {
         $this->apiKey = $apiKey;
+
         return $this;
     }
 
@@ -58,6 +62,7 @@ class BeemMessage
     public function secretKey(string $secretKey): BeemMessage
     {
         $this->secretKey = $secretKey;
+
         return $this;
     }
 
