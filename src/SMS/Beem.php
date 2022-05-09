@@ -15,9 +15,9 @@ class Beem
 
     public function __construct(array $config)
     {
-        $this->apiKey = $config['sms.api_key'];
-        $this->secretKey = $config['sms.secret_key'];
-        $this->senderName = $config['sms.sender_name'];
+        $this->apiKey = $config['sms']['api_key'];
+        $this->secretKey = $config['sms']['secret_key'];
+        $this->senderName = $config['sms']['sender_name'];
     }
 
     public function sendMessage(BeemMessage $message, $recipients): string

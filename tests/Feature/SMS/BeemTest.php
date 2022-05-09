@@ -4,12 +4,14 @@ use Tomsgad\Beem\SMS\Beem;
 
 it('can be instantiate', function (){
     $testConfig = [
-        'senderName' => 'INFO',
-        'apiKey' => 'testApiKey',
-        'secretKey' => 'testSecretKey',
+        'sms' => [
+            'sender_name' => 'INFO',
+            'api_key' => 'testApiKey',
+            'secret_key' => 'testSecretKey',
+        ]
     ];
 
     $beem = new Beem($testConfig);
 
-    expect($beem)->toBeInstanceOf(Beem::class)
+    expect($beem)->toBeInstanceOf(Beem::class);
 });
