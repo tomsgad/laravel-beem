@@ -2,8 +2,6 @@
 
 namespace Tomsgad\Beem\SMS;
 
-use JetBrains\PhpStorm\Pure;
-
 class BeemMessage
 {
     public string $content = '';
@@ -11,11 +9,9 @@ class BeemMessage
     public string $apiKey = '';
     public string $secretKey = '';
 
-    #[Pure] public static function create(string $content): self
-    {
-        return new static($content);
-    }
-
+    /**
+     * @param string $content
+     */
     public function __construct(string $content = '')
     {
         $this->content = $content;
