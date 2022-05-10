@@ -13,7 +13,7 @@
     <a href="https://packagist.org/packages/tomsgad/laravel-beem"><img src="https://img.shields.io/packagist/l/tomsgad/laravel-beem" alt="License"></a>
 </p>
 
-This package provides a simple and crisp way to access the Beem API endpoints, query data with Laravel.
+This package provides a simple and crisp way to access the Beem API endpoints. Sending [notifications](https://laravel.com/docs/9.x/notifications#sms-notifications) sms the laravel way.
 
 ## Installation
 
