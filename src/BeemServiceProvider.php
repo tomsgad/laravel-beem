@@ -21,8 +21,7 @@ class BeemServiceProvider extends PackageServiceProvider
             ->name('laravel-beem')
             ->hasConfigFile();
 
-        Notification::extend('beem', function ($app): BeemChannel
-        {
+        Notification::extend('beem', function ($app): BeemChannel {
             return new BeemChannel(
                 $this->app->make(Beem::class)
             );

@@ -26,7 +26,8 @@ class Beem
 
         try {
             if ($message->sender && $message->apiKey && $message->secretKey) {
-                $response = $client->post($this->smsApiUrl,
+                $response = $client->post(
+                    $this->smsApiUrl,
                     [
                         'verify' => false,
                         'auth' => [$message->apiKey, $message->secretKey],
@@ -43,7 +44,8 @@ class Beem
                     ]
                 );
             } else {
-                $response = $client->post($this->smsApiUrl,
+                $response = $client->post(
+                    $this->smsApiUrl,
                     [
                         'verify' => false,
                         'auth' => [$this->apiKey, $this->secretKey],
