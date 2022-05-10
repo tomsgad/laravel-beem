@@ -2,8 +2,11 @@
 
 namespace Tomsgad\Beem;
 
+use Illuminate\Support\Facades\Notification;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Tomsgad\Beem\SMS\Beem;
+use Tomsgad\Beem\SMS\BeemChannel;
 
 class BeemServiceProvider extends PackageServiceProvider
 {
@@ -17,5 +20,16 @@ class BeemServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-beem')
             ->hasConfigFile();
+
+        Notification::extend('beem', function ($app): BeemChannel
+        {
+            return new BeemChannel(
+                $this->app->make(Beem::class)
+            );
+        });
+
+        $this->app->bind(Beem::class, static function ($app) {
+            return new Beem($app['config']['beem']);
+        });
     }
 }

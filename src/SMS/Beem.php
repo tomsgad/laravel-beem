@@ -26,33 +26,39 @@ class Beem
 
         try {
             if ($message->sender && $message->apiKey && $message->secretKey) {
-                $response = $client->post($this->smsApiUrl, [
-                    'auth' => [$message->apiKey, $message->secretKey],
-                    'headers' => [
-                        'Content-Type' => 'application/json',
-                        'Accept' => 'application/json',
-                    ],
-                    'json' => [
-                        'source_addr' => $message->sender,
-                        'message' => $message->content,
-                        'encoding' => 0,
-                        'recipients' => $recipients,
-                    ],
-                ]);
+                $response = $client->post($this->smsApiUrl,
+                    [
+                        'verify' => false,
+                        'auth' => [$message->apiKey, $message->secretKey],
+                        'headers' => [
+                            'Content-Type' => 'application/json',
+                            'Accept' => 'application/json',
+                        ],
+                        'json' => [
+                            'source_addr' => $message->sender,
+                            'message' => $message->content,
+                            'encoding' => 0,
+                            'recipients' => $recipients,
+                        ],
+                    ]
+                );
             } else {
-                $response = $client->post($this->smsApiUrl, [
-                    'auth' => [$this->apiKey, $this->secretKey],
-                    'headers' => [
-                        'Content-Type' => 'application/json',
-                        'Accept' => 'application/json',
-                    ],
-                    'json' => [
-                        'source_addr' => $this->senderName,
-                        'message' => $message->content,
-                        'encoding' => 0,
-                        'recipients' => $recipients,
-                    ],
-                ]);
+                $response = $client->post($this->smsApiUrl,
+                    [
+                        'verify' => false,
+                        'auth' => [$this->apiKey, $this->secretKey],
+                        'headers' => [
+                            'Content-Type' => 'application/json',
+                            'Accept' => 'application/json',
+                        ],
+                        'json' => [
+                            'source_addr' => $this->senderName,
+                            'message' => $message->content,
+                            'encoding' => 0,
+                            'recipients' => $recipients,
+                        ],
+                    ]
+                );
             }
         } catch (GuzzleException $error) {
             return $error;

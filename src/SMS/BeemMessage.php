@@ -6,10 +6,10 @@ use JetBrains\PhpStorm\Pure;
 
 class BeemMessage
 {
-    public string $content;
-    public string $sender;
-    public string $apiKey;
-    public string $secretKey;
+    public string $content = '';
+    public string $sender = '';
+    public string $apiKey = '';
+    public string $secretKey = '';
 
     #[Pure] public static function create(string $content): self
     {
