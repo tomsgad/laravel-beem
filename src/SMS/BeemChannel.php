@@ -21,7 +21,7 @@ class BeemChannel
         return $this->beem->sendMessage($message, $recipients);
     }
 
-    public function getRecipients($notifiable) : array
+    public function getRecipients($notifiable): array
     {
         $arrayContacts = [];
 
@@ -35,6 +35,7 @@ class BeemChannel
                 ];
             }
         }
+
         return $arrayContacts;
     }
 }

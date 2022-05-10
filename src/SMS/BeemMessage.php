@@ -24,6 +24,7 @@ class BeemMessage
     public function content(string $content): BeemMessage
     {
         $this->content = $content;
+
         return $this;
     }
 
@@ -34,6 +35,7 @@ class BeemMessage
     public function sender(string $sender): BeemMessage
     {
         $this->sender = $sender;
+
         return $this;
     }
 
@@ -44,6 +46,7 @@ class BeemMessage
     public function apiKey(string $apiKey): BeemMessage
     {
         $this->apiKey = $apiKey;
+
         return $this;
     }
 
@@ -54,6 +57,7 @@ class BeemMessage
     public function secretKey(string $secretKey): BeemMessage
     {
         $this->secretKey = $secretKey;
+
         return $this;
     }
 
@@ -63,13 +67,5 @@ class BeemMessage
     public function getSender(): string
     {
         return $this->sender;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSecretKey(): string
-    {
-        return $this->secretKey;
     }
 }

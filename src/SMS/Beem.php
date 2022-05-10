@@ -22,7 +22,7 @@ class Beem
 
     public function sendMessage(BeemMessage $message, $recipients): string
     {
-        $client = new Client;
+        $client = new Client();
 
         try {
             if ($message->sender && $message->apiKey && $message->secretKey) {
