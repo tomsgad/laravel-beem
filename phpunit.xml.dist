@@ -1,45 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-    backupGlobals="false"
-    backupStaticAttributes="false"
-    bootstrap="vendor/autoload.php"
-    colors="true"
-    convertErrorsToExceptions="true"
-    convertNoticesToExceptions="true"
-    convertWarningsToExceptions="true"
-    processIsolation="false"
-    stopOnFailure="false"
-    executionOrder="random"
-    failOnWarning="true"
-    failOnRisky="true"
-    failOnEmptyTestSuite="true"
-    beStrictAboutOutputDuringTests="true"
-    verbose="true"
->
-    <testsuites>
-        <testsuite name="Laravel Beem Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-    <coverage>
-        <include>
-            <directory suffix=".php">./src</directory>
-        </include>
-        <report>
-            <html outputDirectory="build/coverage"/>
-            <text outputFile="build/coverage.txt"/>
-            <clover outputFile="build/logs/clover.xml"/>
-        </report>
-    </coverage>
-    <logging>
-        <junit outputFile="build/report.junit.xml"/>
-    </logging>
-    <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="BEEM_SMS_SENDER_NAME" value="INFO"/>
-        <env name="BEEM_SMS_API_KEY" value="testApiKey"/>
-        <env name="BEEM_SMS_SECRET_KEY" value="testSecretKey"/>
-    </php>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd" backupGlobals="false" bootstrap="vendor/autoload.php" colors="true" processIsolation="false" stopOnFailure="false" executionOrder="random" failOnWarning="true" failOnRisky="true" failOnEmptyTestSuite="true" beStrictAboutOutputDuringTests="true" cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+  <testsuites>
+    <testsuite name="Laravel Beem Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <logging>
+    <junit outputFile="build/report.junit.xml"/>
+  </logging>
+  <php>
+    <env name="APP_ENV" value="testing"/>
+    <env name="BEEM_SMS_SENDER_NAME" value="INFO"/>
+    <env name="BEEM_SMS_API_KEY" value="testApiKey"/>
+    <env name="BEEM_SMS_SECRET_KEY" value="testSecretKey"/>
+  </php>
 </phpunit>
