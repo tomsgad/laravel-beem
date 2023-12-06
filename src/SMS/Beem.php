@@ -25,12 +25,12 @@ class Beem
         $client = new Client();
 
         try {
-            if ($message->sender && $message->apiKey && $message->secretKey) {
+            if ($message->sender && $this->apiKey && $this->secretKey) {
                 $response = $client->post(
                     $this->smsApiUrl,
                     [
                         'verify' => false,
-                        'auth' => [$message->apiKey, $message->secretKey],
+                        'auth' => [$this->apiKey, $this->secretKey],
                         'headers' => [
                             'Content-Type' => 'application/json',
                             'Accept' => 'application/json',
